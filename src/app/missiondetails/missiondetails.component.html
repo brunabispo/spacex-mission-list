@@ -1,0 +1,21 @@
+<div>
+  <div id="main-list" *ngFor="let item of data">
+    <div *ngIf="item.flight_number == flight_id">
+      <div id="img-style">
+        <img width="300" alt="patch" [src]= "item.links.mission_patch_small"><br><br>
+      </div>
+      <div id="detail-style">
+        <h1><u> {{ item.mission_name }} - {{ item.launch_year }} </u></h1>
+        <h2>Rocket Details</h2>
+        <p><b>Rocket Name: </b>{{ item.rocket.rocket_name }}</p>
+        <p><b>Rocket Type: </b>{{ item.rocket.rocket_type }}</p>
+        <h2>Launch Details</h2>
+        <p><b>Launch Site: </b>{{ item.launch_site.site_name_long }}</p>
+        <div style="width: 800px;">
+          <p><b>Launch Description:  </b>{{ item.details }}</p>
+        </div>
+        <button class="button" (click)="goBack()"><span>Go Back</span></button>
+      </div>
+    </div>
+  </div>
+</div>

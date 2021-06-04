@@ -1,0 +1,15 @@
+<div>
+  <div id="main-list" *ngFor="let item of data">
+    <h2> {{ item.mission_name }} - {{ item.launch_year }} </h2>
+    <div>
+      <img width="150" alt="patch" [src]= "item.links.mission_patch_small"><br><br>
+    </div>
+    <p> {{ item.details }} </p>
+
+    <button [routerLink] = "['/item-details', item.flight_number]"  class="button"><span>See Details</span></button>
+    <hr>
+  </div>
+</div>
+
+
+<!-- (click)="selectedItem(item.flight_number)" -->
